@@ -25,6 +25,12 @@ stages:
     - src/train_and_evaluate.py
     params:
     - estimators.ElasticNet.params.alpha
-    - estimators.ElasticNet.params.l1_ratio    
+    - estimators.ElasticNet.params.l1_ratio  
+    metrics:
+    - report/params.json:
+        cache: false
+    - report/scores.json:
+        cache: false
+      
     outs:
     - saved_models/model.joblib
